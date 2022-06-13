@@ -30,4 +30,4 @@ Route::get('/ad/{id}', function($id) {
 Route::post('/ad/{id}', [AdViewController::class, 'store']);
 
 Route::get('/survey-questions/{id}', [QuestionController::class, 'show']);
-Route::get('/survey-filled/{id}', [SurveyFilledController::class, 'store']);
+Route::post('/survey-filled/{id}', [SurveyFilledController::class, 'store']);
