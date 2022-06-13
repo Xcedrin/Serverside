@@ -24,14 +24,21 @@ class AdViewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id, Request $request)
     {
-        //
-        $adview = AdView::updateOrInsert([
-            'ad_id' => $request->ad_id,
-            'user_id' => $request->user_id,
-            'count' => 1
-        ], [
+        $ad = AdView::select('id')->where(['ad_id' => $id, 'user_id' => $request->user_id])->first();
+
+        if(!$ad) {
+            $adview = AdView::create([
+                'ad_id' => $id,
+                'user_id' => $request->user_id,
+                'count' => 1
+            ]);
+
+            return response(['status' => true, 'message' => 'Record added successfully.']);
+        }
+
+        $adview = $ad->update([
             'count' => DB::raw('count + 1')
         ]);
 

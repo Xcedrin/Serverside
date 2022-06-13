@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class AdView extends Model
 {
     use HasFactory;
+
+    protected $table = 'ad_viewed';
+
+    protected $fillable = [
+        'ad_id',
+        'user_id',
+        'count'
+    ];
 }
