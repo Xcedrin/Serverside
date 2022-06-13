@@ -44,9 +44,15 @@ class QuestionController extends Controller
      * @param  \App\Models\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function show(Question $question)
+    public function show($survey)
     {
-        //
+        $questions = Question::where('survery_id', $survey)->get();
+
+        if($questions->count() > 0) {
+            return response(['status' => true, 'data' => $questions]);
+        }
+
+        return response(['status' => false, 'message' => 'No result found']);
     }
 
     /**

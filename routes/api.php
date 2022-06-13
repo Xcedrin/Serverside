@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SurveyController;
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\SurveyFilledController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdViewController;
 /*
@@ -28,5 +29,5 @@ Route::get('/ad/{id}', function($id) {
 
 Route::post('/ad/{id}', [AdViewController::class, 'store']);
 
-Route::get('/survery/{id}', [SurveyController::class, 'show']);
-Route::get('/survery/{id}', [SurveyController::class, 'show']);
+Route::get('/survey-questions/{id}', [QuestionController::class, 'show']);
+Route::get('/survey-filled/{id}', [SurveyFilledController::class, 'store']);
