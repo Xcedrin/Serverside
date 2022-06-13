@@ -9,7 +9,7 @@ class Question extends Model
 {
     use HasFactory;
 
-    private $casts = [
+    protected $casts = [
         'question' => 'array'
     ];
 }

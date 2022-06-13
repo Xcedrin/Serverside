@@ -46,7 +46,7 @@ class QuestionController extends Controller
      */
     public function show($survey)
     {
-        $questions = Question::where('survery_id', $survey)->get();
+        $questions = Question::where('survey_id', $survey)->get();
 
         if($questions->count() > 0) {
             return response(['status' => true, 'data' => $questions]);
