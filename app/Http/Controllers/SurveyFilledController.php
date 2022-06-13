@@ -13,12 +13,12 @@ class SurveyFilledController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($question, Request $request)
+    public function store(Request $request)
     {
         //
         $survey_filled = SurveyFilled::create([
             'user_id' => $request->user_id,
-            'question_id' => $question,
+            'question_id' => $request->question_id,
             'option' => $request->option
         ]);
 

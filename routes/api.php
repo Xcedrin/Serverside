@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SurveyFilledController;
@@ -30,4 +29,4 @@ Route::get('/ad/{id}', function($id) {
 Route::post('/ad/{id}', [AdViewController::class, 'store']);
 
 Route::get('/survey-questions/{id}', [QuestionController::class, 'show']);
-Route::post('/survey-filled/{id}', [SurveyFilledController::class, 'store']);
+Route::post('/survey-filled', [SurveyFilledController::class, 'store']);
