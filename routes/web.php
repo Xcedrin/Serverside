@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::group(['middleware' => 'guest'], function () {
+        Route::view('/login','admin.pages.auth.auth');
+        Route::post('/login', function () {})->name('login');
+        Route::view('/forgot', 'admin.pages.auth.forgot')->name('forgot');
+    });
+
+    Route::group(['middleware' => 'auth'], function () {
+
+    });
+
+});
