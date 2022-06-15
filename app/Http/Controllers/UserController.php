@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\UserStats;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function login(Request $request) {
-        $user = User::where(['email' => $request->email])->first();
+        $user = UserStats::where(['email' => $request->email])->first();
 
         if(!$user) {
-            $user = User::create([
+            $user = UserStats::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'datetime' => $request->datetime,

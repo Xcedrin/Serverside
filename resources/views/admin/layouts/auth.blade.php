@@ -8,7 +8,7 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
-            <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+            <a href="#" class="h1"><b>RIDE</b>-HAILING</a>
         </div>
         @yield('content')
         <!-- /.card-body -->
