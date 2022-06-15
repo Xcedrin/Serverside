@@ -14,7 +14,9 @@ class SurveyFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->realText(40)
+            ['title' => 'Vacation'],
+            ['title' => 'Breakfast'],
+            ['title' => 'Transport']
         ];
     }
 }

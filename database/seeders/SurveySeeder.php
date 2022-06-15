@@ -15,6 +15,17 @@ class SurveySeeder extends Seeder
     public function run()
     {
         //
-        Survey::factory(20)->create();
+
+        Survey::create([
+            'title' => 'Vacation'
+        ]);
+
+        Survey::create([
+            'title' => 'Breakfast'
+        ]);
+
+        Survey::create([
+            'title' => 'Transport'
+        ]);
     }
 }
