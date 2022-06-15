@@ -16,4 +16,8 @@ class AdView extends Model
         'user_id',
         'count'
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
