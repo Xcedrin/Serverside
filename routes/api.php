@@ -23,7 +23,7 @@ use App\Http\Controllers\AdViewController;
 Route::post('/login', [UserController::class, 'login']);
 
 Route::get('/ad/{id}', function($id) {
-    return response(['status' => true, 'data' => url('/' . $id . '.mp4')]);
+    return response(['status' => true, 'data' => url('/assets/' . $id . '.mp4')]);
 });
 
 Route::post('/ad/{id}', [AdViewController::class, 'store']);
