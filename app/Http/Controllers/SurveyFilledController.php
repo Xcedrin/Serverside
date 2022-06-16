@@ -19,6 +19,7 @@ class SurveyFilledController extends Controller
         $survey_filled = SurveyFilled::create([
             'user_id' => $request->user_id,
             'question_id' => $request->question_id,
+            'survey_id' => $request->survey_id,
             'option' => $request->option
         ]);
 

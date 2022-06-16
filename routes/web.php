@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\SurveryResponsesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +16,6 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => 'guest'], function () {
         Route::view('/login','admin.pages.auth.auth')->name('login');
@@ -28,7 +25,14 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
     Route::group(['middleware' => 'auth'], function () {
+        // dashboard routes
         Route::get('dashboard', [DashboardController::class, 'index']);
+        Route::get('/', [DashboardController::class, 'index']);
+
+        // survey stats routes
+        Route::get('/survey-stats', [SurveryResponsesController::class, 'index']);
+
+        // logout route
         Route::get('logout', [LoginController::class, 'logout'])->name('admin.logout');
     });
 

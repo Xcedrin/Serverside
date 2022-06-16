@@ -43,10 +43,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ url('admin/survey-stats') }}" class="nav-link">
                         <i class="nav-icon fas fa-user-alt"></i>
                         <p>
-                            Users Stats
+                            Survey Responses
                         </p>
                     </a>
                 </li>
