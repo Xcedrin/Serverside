@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-blue">
                         <h3 class="card-title">User Stats</h3>
                     </div>
                     <!-- /.card-header -->
@@ -48,7 +48,7 @@
             <!-- /.col -->
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-warning">
                         <h3 class="card-title">Video Playing Stats</h3>
                     </div>
                     <!-- /.card-header -->
@@ -85,7 +85,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-info">
                         <h3 class="card-title">Survey Responses</h3>
                     </div>
                     <!-- /.card-header -->
