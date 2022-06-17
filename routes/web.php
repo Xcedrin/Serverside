@@ -1,10 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\ChangePasswordController;
 use App\Http\Controllers\Admin\SurveryResponsesController;
 use App\Http\Controllers\Admin\VideoPlayingStatsController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,11 @@ Route::group(['prefix' => 'admin'], function () {
 
         // video playing stats
         Route::get('/video-stats/{start_date?}/{end_date?}', [VideoPlayingStatsController::class, 'index']);
+
+        // user profile
+        Route::view('/profile', 'admin.pages.profile');
+        // change password
+        Route::post('/change-password', [ChangePasswordController::class, 'update']);
 
         // logout route
         Route::get('logout', [LoginController::class, 'logout'])->name('admin.logout');
