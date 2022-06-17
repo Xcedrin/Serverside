@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\SurveryResponsesController;
+use App\Http\Controllers\Admin\VideoPlayingStatsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +31,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/', [DashboardController::class, 'index']);
 
         // survey stats routes
-//        Route::get('/survey-stats/{start-date}/{end-date}', [SurveryResponsesController::class, 'index']);
         Route::get('/survey-stats/{start_date?}/{end_date?}', [SurveryResponsesController::class, 'index']);
+
+        // video playing stats
+        Route::get('/video-stats/{start_date?}/{end_date?}', [VideoPlayingStatsController::class, 'index']);
 
         // logout route
         Route::get('logout', [LoginController::class, 'logout'])->name('admin.logout');
