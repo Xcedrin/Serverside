@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\ChangePasswordController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SurveryResponsesController;
 use App\Http\Controllers\Admin\VideoPlayingStatsController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 

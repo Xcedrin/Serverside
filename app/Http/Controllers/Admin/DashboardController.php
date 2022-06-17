@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\AdView;
 use App\Models\SurveyFilled;
 use App\Models\UserStats;
@@ -25,7 +26,7 @@ class DashboardController extends Controller
         $survey_filled_stats = SurveyFilled::select('user_id', 'question_id', 'option')
             ->with('user')
             ->with('question')
-            ->orderBy('updated_at', 'desc')
+            ->latest()
             ->limit(5)
             ->get();
 
