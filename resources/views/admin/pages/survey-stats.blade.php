@@ -1,5 +1,9 @@
 @extends('admin.layouts.default')
 
+@section('page-styles')
+    <link rel="stylesheet" href="{{ asset('assets/plugins/daterangepicker/css/daterangepicker.css') }}">
+@endsection
+
 @section('page-title')
     <h1>Survey Responses</h1>
 @endsection
@@ -19,12 +23,11 @@
 {{--                        <h3 class="card-title">Responsive Hover Table</h3>--}}
 
                         <div class="card-tools">
-                            <div class="input-group input-group-sm" style="width: 150px;">
-                                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
+                            <div class="input-group input-group-sm" style="width: 190px;">
+                                <input type="text" class="form-control float-right" name="datetimes" value="" />
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-default">
-                                        <i class="fas fa-search"></i>
+                                        <i class="fas fa-filter"></i>
                                     </button>
                                 </div>
                             </div>
@@ -63,4 +66,22 @@
             </div>
         </div>
     </div><!-- /.container-fluid -->
+@endsection
+
+@section('page-script')
+    <script src="{{ asset('assets/plugins/moment/moment.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/daterangepicker/js/daterangepicker.min.js') }}"></script>
+    <script type="text/javascript">
+        $('input[name="datetimes"]').daterangepicker({
+            timePicker: true,
+            startDate: moment().subtract(29, 'days'),
+            endDate: moment(),
+            /*locale: {
+                format: 'M/DD hh:mm A'
+            }*/
+        }, function (start, end) {
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            location.href = "{{ url('/admin/survey-stats') }}" + "/" + start.format('YYYY-MM-DD') + "/" + end.format('YYYY-MM-DD');
+        });
+    </script>
 @endsection

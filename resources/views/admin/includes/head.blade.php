@@ -10,3 +10,14 @@
 <link rel="stylesheet" href="{{ asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
 <!-- Theme style -->
 <link rel="stylesheet" href="{{ asset('assets/css/adminlte.min.css') }}">
+
+<style>
+    .daterangepicker.opensright:after{
+        left: 281px !important;
+    }
+    .daterangepicker.opensright:before{
+        left: 280px !important;
+    }
+</style>
+
+@yield('page-styles')

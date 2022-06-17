@@ -30,7 +30,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/', [DashboardController::class, 'index']);
 
         // survey stats routes
-        Route::get('/survey-stats', [SurveryResponsesController::class, 'index']);
+//        Route::get('/survey-stats/{start-date}/{end-date}', [SurveryResponsesController::class, 'index']);
+        Route::get('/survey-stats/{start_date?}/{end_date?}', [SurveryResponsesController::class, 'index']);
 
         // logout route
         Route::get('logout', [LoginController::class, 'logout'])->name('admin.logout');
