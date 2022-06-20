@@ -23,9 +23,12 @@ class DashboardController extends Controller
             ->limit(5)
             ->get();
 
-        $survey_filled_stats = SurveyFilled::select('user_id', 'question_id', 'option')
+        $survey_filled_stats = SurveyFilled::select('user_id', 'question_id', 'survey_id', 'option')
             ->with('user')
             ->with('question')
+            ->with('survey', function ($q) {
+                $q->select('id', 'title');
+            })
             ->latest()
             ->limit(5)
             ->get();
