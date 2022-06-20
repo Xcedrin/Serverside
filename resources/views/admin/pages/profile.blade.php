@@ -1,5 +1,9 @@
 @extends('admin.layouts.default')
 
+@section('page-head-title')
+    RideHailing | Profile
+@endsection
+
 @section('page-title')
     <h1>Dashboard</h1>
 @endsection

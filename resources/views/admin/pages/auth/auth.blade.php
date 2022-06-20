@@ -1,5 +1,9 @@
 @extends('admin.layouts.auth')
 
+@section('page-head-title')
+    RideHailing | Login
+@endsection
+
 @section('content')
     <div class="card-body">
         <p class="login-box-msg">Sign in to start your session</p>

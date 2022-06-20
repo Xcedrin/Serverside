@@ -1,5 +1,9 @@
 @extends('admin.layouts.default')
 
+@section('page-head-title')
+    RideHailing | Video Playing Stats
+@endsection
+
 @section('page-styles')
     <link rel="stylesheet" href="{{ asset('assets/plugins/daterangepicker/css/daterangepicker.css') }}">
 @endsection

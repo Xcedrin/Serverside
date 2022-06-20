@@ -1,5 +1,9 @@
 @extends('admin.layouts.auth')
 
+@section('page-head-title')
+    RideHailing | Forgot Password
+@endsection
+
 @section('content')
     <div class="card-body">
         <p class="login-box-msg">Enter your email to receive a password reset link</p>
