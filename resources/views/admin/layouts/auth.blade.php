@@ -18,5 +18,6 @@
 <!-- /.login-box -->
 
 @include('admin.includes.scripts')
+@yield('page-script')
 </body>
 </html>
