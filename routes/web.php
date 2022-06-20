@@ -21,6 +21,8 @@ use App\Http\Controllers\Admin\UserStatsController;
 |
 */
 
+Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
+
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => 'guest'], function () {
         Route::view('/login','admin.pages.auth.auth')->name('login');
