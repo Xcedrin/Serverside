@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\VideoPlayingStatsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ForgotPasswordController;
 use App\Http\Controllers\Admin\ResetPasswordController;
+use App\Http\Controllers\Admin\UserStatsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,9 @@ Route::group(['prefix' => 'admin'], function () {
 
         // video playing stats
         Route::get('/video-stats/{start_date?}/{end_date?}', [VideoPlayingStatsController::class, 'index']);
+
+        // user stats
+        Route::get('/user-stats', [UserStatsController::class, 'index']);
 
         // user profile
         Route::view('/profile', 'admin.pages.profile');

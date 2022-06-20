@@ -45,7 +45,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ url('admin/survey-stats') }}" class="nav-link {{ Request::segment(2) === 'survey-stats' ? 'active' : null }}">
-                        <i class="nav-icon fas fa-user-alt"></i>
+                        <i class="nav-icon fas fa-poll"></i>
                         <p>
                             Survey Responses
                         </p>
@@ -54,9 +54,18 @@
 
                 <li class="nav-item">
                     <a href="{{ url('admin/video-stats') }}" class="nav-link {{ Request::segment(2) === 'video-stats' ? 'active' : null }}">
-                        <i class="nav-icon fas fa-user-alt"></i>
+                        <i class="nav-icon fas fa-video"></i>
                         <p>
                             Video Playing Stats
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ url('admin/user-stats') }}" class="nav-link {{ Request::segment(2) === 'user-stats' ? 'active' : null }}">
+                        <i class="nav-icon fas fa-chart-line"></i>
+                        <p>
+                            User Stats
                         </p>
                     </a>
                 </li>
