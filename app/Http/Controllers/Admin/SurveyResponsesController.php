@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\SurveyFilled;
 
-class SurveryResponsesController extends Controller
+class SurveyResponsesController extends Controller
 {
     public function index($start_date = '', $end_date = '') {
         $survey_object = SurveyFilled::select('question_id', 'user_id', 'survey_id', 'option')
