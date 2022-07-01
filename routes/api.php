@@ -22,9 +22,9 @@ use App\Http\Controllers\AdViewController;
 
 Route::post('/login', [UserController::class, 'login']);
 
-Route::get('/ad/[0-9]+', function($id) {
+Route::get('/ad/{id}', function($id) {
     return response(['status' => true, 'data' => url('/assets/' . $id . '.mp4')]);
-});
+})->where('id', '[0-9]+');
 
 Route::post('/ad/{id}', [AdViewController::class, 'store']);
 
