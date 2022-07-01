@@ -22,7 +22,7 @@ use App\Http\Controllers\AdViewController;
 
 Route::post('/login', [UserController::class, 'login']);
 
-Route::get('/ad/{id}', function($id) {
+Route::get('/ad/[0-9]+', function($id) {
     return response(['status' => true, 'data' => url('/assets/' . $id . '.mp4')]);
 });
 
