@@ -12,4 +12,8 @@ class Question extends Model
     protected $casts = [
         'question' => 'array'
     ];
+
+    public function survey() {
+        return $this->belongsTo(Survey::class, 'survey_id');
+    }
 }

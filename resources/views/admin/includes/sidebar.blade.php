@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('admin/survey-stats') }}" class="nav-link {{ Request::segment(2) === 'survey-stats' ? 'active' : null }}">
+                    <a href="{{ url('admin/survey') }}" class="nav-link {{ Request::segment(2) === 'survey' ? 'active' : null }}">
                         <i class="nav-icon fas fa-poll"></i>
                         <p>
                             Survey Responses

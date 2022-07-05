@@ -7,17 +7,18 @@ use App\Models\SurveyFilled;
 
 class SurveyResponsesController extends Controller
 {
-    public function index($start_date = '', $end_date = '') {
+    public function index($question, $start_date = '', $end_date = '') {
         $survey_object = SurveyFilled::select('question_id', 'user_id', 'survey_id', 'option')
-            ->with('question', function ($q) {
+            /*->with('question', function ($q) {
                 $q->select('id', 'question');
-            })
+            })*/
             ->with('user', function ($q) {
                 $q->select('id', 'name', 'email');
             })
-            ->with('survey', function ($q) {
+            /*->with('survey', function ($q) {
                 $q->select('id', 'title');
-            })
+            })*/
+            ->where('question_id', $question)
             ->latest();
 
         if($start_date && $end_date) {
@@ -27,7 +28,7 @@ class SurveyResponsesController extends Controller
         }
 
         $survey_responses = $survey_object->get();
-
+//dd($survey_responses);
         return view('admin.pages.survey-stats', compact('survey_responses'));
     }
 

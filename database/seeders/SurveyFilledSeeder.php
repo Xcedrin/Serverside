@@ -46,42 +46,42 @@ class SurveyFilledSeeder extends Seeder
         SurveyFilled::create([
             'user_id' => 1,
             'survey_id' => 2,
-            'question_id' => 1,
+            'question_id' => 5,
             'option' => 'At home'
         ]);
 
         SurveyFilled::create([
             'user_id' => 1,
             'survey_id' => 2,
-            'question_id' => 2,
+            'question_id' => 6,
             'option' => '5'
         ]);
 
         SurveyFilled::create([
             'user_id' => 1,
             'survey_id' => 2,
-            'question_id' => 3,
+            'question_id' => 7,
             'option' => 'Once a week'
         ]);
 
         SurveyFilled::create([
             'user_id' => 1,
             'survey_id' => 2,
-            'question_id' => 1,
+            'question_id' => 8,
             'option' => '2'
         ]);
 
         SurveyFilled::create([
             'user_id' => 1,
             'survey_id' => 3,
-            'question_id' => 2,
+            'question_id' => 9,
             'option' => '1'
         ]);
 
         SurveyFilled::create([
             'user_id' => 1,
             'survey_id' => 3,
-            'question_id' => 3,
+            'question_id' => 10,
             'option' => '0-100 miles'
         ]);
     }

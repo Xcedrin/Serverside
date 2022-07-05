@@ -42,10 +42,7 @@
                         <table class="table table-hover text-nowrap">
                             <thead>
                             <tr>
-{{--                                <th></th>--}}
-                                <th>Survey</th>
                                 <th>User</th>
-                                <th>Question</th>
                                 <th>Option</th>
                                 <th>Date/Time</th>
                             </tr>
@@ -53,12 +50,9 @@
                             <tbody>
                             @foreach($survey_responses as $response)
                                 <tr>
-                                    <td>{{ optional($response->survey)['title'] }}</td>
                                     <td>{{ optional($response->user)['email'] }}</td>
-                                    <td>{{ optional($response->question)['question']['question'] }}</td>
                                     <td>{{ $response->option }}</td>
                                     <td>{{ \Carbon\Carbon::parse($response->created_at)->format('d-m-Y h:i A') }}</td>
-{{--                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>--}}
                                 </tr>
                             @endforeach
                             </tbody>
@@ -76,6 +70,7 @@
     <script src="{{ asset('assets/plugins/moment/moment.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/daterangepicker/js/daterangepicker.min.js') }}"></script>
     <script type="text/javascript">
+        let question_id = `{{ request('question') }}`
         $('input[name="datetimes"]').daterangepicker({
             timePicker: true,
             startDate: moment().subtract(29, 'days'),
@@ -85,7 +80,7 @@
             }*/
         }, function (start, end) {
             console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-            location.href = "{{ url('/admin/survey-stats') }}" + "/" + start.format('YYYY-MM-DD') + "/" + end.format('YYYY-MM-DD');
+            location.href = "{{ url('/admin/survey-stats') }}/" + question_id + "/" + start.format('YYYY-MM-DD') + "/" + end.format('YYYY-MM-DD');
         });
     </script>
 @endsection

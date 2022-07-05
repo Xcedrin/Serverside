@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ForgotPasswordController;
 use App\Http\Controllers\Admin\ResetPasswordController;
 use App\Http\Controllers\Admin\UserStatsController;
+use App\Http\Controllers\SurveyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +42,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/', [DashboardController::class, 'index']);
 
         // survey stats routes
-        Route::get('/survey-stats/{start_date?}/{end_date?}', [SurveyResponsesController::class, 'index']);
+        Route::get('survey', [SurveyController::class, 'index']);
+        Route::get('/survey-stats/{question}/{start_date?}/{end_date?}', [SurveyResponsesController::class, 'index']);
 
         // video playing stats
         Route::get('/video-stats/{start_date?}/{end_date?}', [VideoPlayingStatsController::class, 'index']);

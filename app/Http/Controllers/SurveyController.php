@@ -8,6 +8,12 @@ use App\Models\Question;
 
 class SurveyController extends Controller
 {
+    public function index() {
+        $questions = Question::select('id', 'question', 'survey_id')->with('survey')->get();
+
+        return view('admin.pages.surveys', compact('questions'));
+    }
+
     /**
      * Display the specified resource.
      *
