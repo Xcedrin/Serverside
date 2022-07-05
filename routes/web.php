@@ -46,7 +46,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/survey-stats/{question}/{start_date?}/{end_date?}', [SurveyResponsesController::class, 'index']);
 
         // video playing stats
-        Route::get('/video-stats/{start_date?}/{end_date?}', [VideoPlayingStatsController::class, 'index']);
+        Route::get('videos', [VideoPlayingStatsController::class, 'getAll']);
+        Route::get('/video-stats/{video}/{start_date?}/{end_date?}', [VideoPlayingStatsController::class, 'index']);
 
         // user stats
         Route::get('/user-stats', [UserStatsController::class, 'index']);

@@ -53,7 +53,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ url('admin/video-stats') }}" class="nav-link {{ Request::segment(2) === 'video-stats' ? 'active' : null }}">
+                    <a href="{{ url('admin/videos') }}" class="nav-link {{ Request::segment(2) === 'videos' ? 'active' : null }}">
                         <i class="nav-icon fas fa-video"></i>
                         <p>
                             Video Playing Stats

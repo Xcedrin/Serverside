@@ -1,7 +1,7 @@
 @extends('admin.layouts.default')
 
 @section('page-head-title')
-    RideHailing | Video Playing Stats
+    RideHailing | Videos
 @endsection
 
 @section('page-styles')
@@ -9,12 +9,12 @@
 @endsection
 
 @section('page-title')
-    <h1>Video Playing Stats</h1>
+    <h1>Videos</h1>
 @endsection
 
 @section('page-info')
     <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item active">Video Playing Stats</li>
+    <li class="breadcrumb-item active">Videos</li>
 @endsection
 
 @section('content')
@@ -23,8 +23,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header">
-                        {{--                        <h3 class="card-title">Responsive Hover Table</h3>--}}
+                    {{--<div class="card-header">
+                        --}}{{--                        <h3 class="card-title">Responsive Hover Table</h3>--}}{{--
 
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 190px;">
@@ -36,31 +36,23 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>--}}
                     <!-- /.card-header -->
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover text-nowrap">
                             <thead>
                             <tr>
-                                {{--                                <th></th>--}}
-{{--                                <th>Video</th>--}}
-                                <th>User</th>
-                                <th>Views</th>
-                                {{--<th>Option</th>--}}
-                                <th>Date/Time</th>
+                                <th>Title</th>
+                                <th>Video</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($video_playing_stats as $response)
-                                <tr>
-{{--                                    <td><a href="{{ asset('/assets') }}/{{ $response->ad_id }}.mp4" target="_blank">{{ $response->ad_id }}</a></td>--}}
-                                    <td>{{ optional($response->user)['email'] }}</td>
-                                    <td>{{ $response->count }}</td>
-{{--                                    <td>{{ $response->option }}</td>--}}
-                                    <td>{{ \Carbon\Carbon::parse($response->created_at)->format('d-m-Y h:i A') }}</td>
-                                    {{--                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>--}}
-                                </tr>
-                            @endforeach
+                                @foreach($videos as $video)
+                                    <tr>
+                                        <td><a href="{{ url('/admin/video-stats') }}/{{ $video['video'] }}">{{ $video['title'] }}</a></td>
+                                        <td><a href="{{ asset('/assets') }}/{{ $video['video'] }}.mp4" target="_blank">{{ $video['video'] }}</a></td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
