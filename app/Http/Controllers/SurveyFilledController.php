@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SurveyFilledRequest;
 use App\Models\SurveyFilled;
-use Illuminate\Http\Request;
 
 class SurveyFilledController extends Controller
 {
@@ -13,9 +13,8 @@ class SurveyFilledController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SurveyFilledRequest $request)
     {
-        //
         $survey_filled = SurveyFilled::create([
             'user_id' => $request->user_id,
             'question_id' => $request->question_id,
