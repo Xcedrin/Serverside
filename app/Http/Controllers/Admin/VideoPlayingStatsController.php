@@ -10,12 +10,12 @@ class VideoPlayingStatsController extends Controller
 {
     //
     public function index($video, $start_date = '', $end_date = '') {
-        $ad_view_object = AdView::select('user_id', 'ad_id', 'count')->with('user')->latest();
+        $ad_view_object = AdView::select('user_id', 'ad_id', 'count', 'created_at')->with('user')->latest();
 
         if($start_date && $end_date) {
             $ad_view_object->whereBetween('created_at', [$start_date, $end_date]);
         } else {
-            $ad_view_object->where('created_at', '>', now()->subDays(30)->endOfDay());
+//            $ad_view_object->where('created_at', '>', now()->subDays(30)->endOfDay());
         }
 
         $video_playing_stats = $ad_view_object->where('ad_id', $video)->get();

@@ -101,7 +101,7 @@
                                 <th>User</th>
                                 <th>Date</th>
                                 <th>Status</th>
-                                <th>Reason</th>
+                                <th>Date/Time</th>
                             </tr>
                             </thead>
                             <tbody>

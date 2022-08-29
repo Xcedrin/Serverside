@@ -8,7 +8,7 @@ use App\Models\SurveyFilled;
 class SurveyResponsesController extends Controller
 {
     public function index($question, $start_date = '', $end_date = '') {
-        $survey_object = SurveyFilled::select('question_id', 'user_id', 'survey_id', 'option')
+        $survey_object = SurveyFilled::select('question_id', 'user_id', 'survey_id', 'option', 'created_at')
             /*->with('question', function ($q) {
                 $q->select('id', 'question');
             })*/
@@ -24,7 +24,7 @@ class SurveyResponsesController extends Controller
         if($start_date && $end_date) {
             $survey_object->whereBetween('created_at', [$start_date, $end_date]);
         } else {
-            $survey_object->where('created_at', '>', now()->subDays(30)->endOfDay());
+//            $survey_object->where('created_at', '>', now()->subDays(30)->endOfDay());
         }
 
         $survey_responses = $survey_object->get();
