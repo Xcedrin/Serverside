@@ -38,7 +38,7 @@
                                             <td>{{ $user_stat->name }}</td>
                                             <td>{{ $user_stat->email }}</td>
                                             <td>{{ $user_stat->location }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($user_stat->created_at)->format('d-m-Y h:i A') }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($user_stat->updated_at)->format('d-m-Y h:i A') }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -99,8 +99,8 @@
                             <tr>
                                 <th>Survey</th>
                                 <th>User</th>
-                                <th>Date</th>
-                                <th>Status</th>
+                                <th>Question</th>
+                                <th>Option</th>
                                 <th>Date/Time</th>
                             </tr>
                             </thead>

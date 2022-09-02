@@ -54,7 +54,7 @@
                                     <td>{{ $user_stat->name }}</td>
                                     <td>{{ $user_stat->email }}</td>
                                     <td>{{ $user_stat->location }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($user_stat->created_at)->format('d-m-Y h:i A') }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($user_stat->updated_at)->format('d-m-Y h:i A') }}</td>
                                 </tr>
                             @endforeach
                             </tbody>

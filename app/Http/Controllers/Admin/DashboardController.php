@@ -12,7 +12,7 @@ class DashboardController extends Controller
 
     public function index() {
 
-        $user_stats = UserStats::select('name', 'email', 'location', 'datetime', 'created_at')
+        $user_stats = UserStats::select('name', 'email', 'location', 'datetime', 'updated_at')
             ->orderBy('datetime', 'desc')
             ->limit(5)
             ->get();
