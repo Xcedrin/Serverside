@@ -26,24 +26,28 @@ class VideoPlayingStatsController extends Controller
     public function getAll() {
         $videos = [
             [
-                'title' => 'The Home Depot',
+                'title' => 'Coca Cola',
                 'video' => 1
             ],
             [
-                'title' => 'Coca Cola',
+                'title' => 'McDonalds',
                 'video' => 2
             ],
             [
-                'title' => 'Dunkin',
+                'title' => 'Lowe\'s',
                 'video' => 3
             ],
             [
-                'title' => 'McDonalds',
+                'title' => 'Dunkin Donuts',
                 'video' => 4
             ],
             [
-                'title' => 'Uber',
+                'title' => 'Verizon',
                 'video' => 5
+            ],
+            [
+                'title' => 'Nike',
+                'video' => 6
             ],
 
         ];
